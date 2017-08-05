@@ -1,0 +1,18 @@
+.jimu-widget-BufferRenderer div:first-child{
+  color: red;
+}
+.doBuffer{
+    background: #24B5CC !important;
+    color: #ffffff !important;
+    border-radius: 0 !important;
+}
+.doBuffer:hover{
+      background-color: #0090A7 ;
+}
+
+.busyIndicater{
+    width: 40px;
+    height: 40px;
+    background: url(images/busy.gif) center no-repeat;
+    vertical-align: middle;
+}
