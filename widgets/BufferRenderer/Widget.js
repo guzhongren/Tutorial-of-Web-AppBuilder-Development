@@ -19,9 +19,10 @@ define(['dojo/_base/declare', "dijit/form/NumberTextBox", "dijit/form/Button", "
       _busyIndicate: null,// gp工作状态
       _bufferSymbol: null,
       _graphicsLayer: null,
+
       postCreate: function () {
         this.inherited(arguments);
-        console.log('postCreate');
+        console.log('postCreate', "bufferRenderer");
 
         this._initComponets();
       },
@@ -29,7 +30,8 @@ define(['dojo/_base/declare', "dijit/form/NumberTextBox", "dijit/form/Button", "
       startup: function () {
         this.inherited(arguments);
         // this.mapIdNode.innerHTML = 'map id:' + this.map.id;
-        console.log('startup');
+        console.log('startup', "bufferRenderer");
+
       },
 
       onOpen: function () {
@@ -43,7 +45,7 @@ define(['dojo/_base/declare', "dijit/form/NumberTextBox", "dijit/form/Button", "
       },
 
       onClose: function () {
-        console.log('onClose');
+        console.log('onClose', "bufferRenderer");
         this.bufferDistance = null;
         this.geometries = null;
         this.geometryService = null;
@@ -67,17 +69,17 @@ define(['dojo/_base/declare', "dijit/form/NumberTextBox", "dijit/form/Button", "
         console.log('onSignOut');
       },
 
-      showVertexCount: function (count) {
-        // this.vertexCount.innerHTML = 'The vertex count is: ' + count;
-      },
+      // showVertexCount: function (count) {
+      //   // this.vertexCount.innerHTML = 'The vertex count is: ' + count;
+      // },
       /**
        * 将缓冲结果展示在前端
        */
       _renderBufferResult: function (bufferGeometries) {
         bufferGeometries && bufferGeometries.length > 0 && bufferGeometries.map((geometry) => {
-          let tempGraphis = new graphic(geometry, this._bufferSymbol);
-          this._graphicsLayer.add(tempGraphis);
-          tempGraphis = null;
+          let tempGraphic = new graphic(geometry, this._bufferSymbol);
+          this._graphicsLayer.add(tempGraphic);
+          tempGraphic = null;
         });
       },
 

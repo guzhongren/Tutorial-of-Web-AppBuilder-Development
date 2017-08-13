@@ -292,6 +292,13 @@
         "id": "widgets_testWidget_Widget_20",
         "name": "testWidget",
         "index": 2
+      },
+      {
+        "uri": "widgets/ztwidget/Widget",
+        "version": "2.5",
+        "id": "widgets_ztwidget_Widget_21",
+        "name": "ztwidget",
+        "index": 3
       }
     ],
     "groups": []
